@@ -1,0 +1,13 @@
+namespace: "imjoseangel"
+name: "general"
+version: "1.0.1"
+readme: "README.md"
+authors:
+    - "Jose Angel Munoz <josea.munoz@gmail.com>"
+license:
+    - "MIT"
+tags:
+    - imjoseangel
+    - demo
+    - collection
+repository: "https://www.github.com/imjoseangel/general"

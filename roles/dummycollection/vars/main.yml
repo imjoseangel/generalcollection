@@ -1,0 +1,17 @@
+---
+actions_dummy:
+  list:
+    - testrole
+  deploy:
+    - testrole
+  destroy:
+    - testrole
+
+actions_vars:
+  deploy:
+    - dummy.name
+  destroy:
+    - dummy.name
+
+actions_excluded:
+  - list
