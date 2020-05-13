@@ -1,0 +1,2 @@
+# generalcollection
+Ansible Collection Demo
