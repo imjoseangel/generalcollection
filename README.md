@@ -5,6 +5,6 @@
 Install with:
 
 ```sh
-ansible-galaxy collection install imjoseangel.general
+ansible-galaxy collection install -r requirements.yml
 ```
 
