@@ -11,7 +11,7 @@ jobs:
         python-version: [3.8]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@master
       with:
         fetch-depth: '0'
     - name: Set up Python ${{ matrix.python-version }}
@@ -34,7 +34,7 @@ jobs:
         git add release.zip
         git commit -m "Add zip release"
     - name: Push changes
-      uses: ad-m/github-push-action@v2
+      uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
     # - name: Create Release Folder
