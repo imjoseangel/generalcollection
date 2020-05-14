@@ -37,21 +37,14 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Bump version and push tag
+      uses: anothrNick/github-tag-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        CUSTOM_TAG: v1.0.1
     - name: Upload to release
       uses: AButler/upload-release-assets@v2.0
       with:
         files: imjoseangel-general*.tar.gz
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        release-tag: "v1.0.1"
-
-    # - name: Create Release Folder
-    #   run: rsync -arv --exclude='.git/' --exclude='.github/' --exclude='.gitignore' . ./release
-    # - name: Switch to Release Folder
-    #   run: |
-    #     cd release
-    #     ls -la
-    # - name: Bump version and push tag
-    #   uses: anothrNick/github-tag-action@master
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #     WITH_V: true
+        release-tag: "${{ steps.bumpVersion.outputs.tag }}"
