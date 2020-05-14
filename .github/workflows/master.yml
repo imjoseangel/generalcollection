@@ -42,7 +42,7 @@ jobs:
       with:
         files: imjoseangel-general*.tar.gz
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        release-tag: "1.0.1"
+        release-tag: "v1.0.1"
 
     # - name: Create Release Folder
     #   run: rsync -arv --exclude='.git/' --exclude='.github/' --exclude='.gitignore' . ./release
