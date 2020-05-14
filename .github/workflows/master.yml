@@ -16,7 +16,8 @@ jobs:
       run: |
         git config --local user.email "josea.munoz@gmail.com"
         git config --local user.name "imjoseangel"
-        git commit -m "Add zip release" -a
+        git add release.zip
+        git commit -m "Add zip release"
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
