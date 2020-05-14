@@ -18,9 +18,9 @@ jobs:
     - name: Read version
       id: getversion
       run: |
-        export currentversion=$(grep version galaxy.yml | awk '{ print $2 }')
+        export CVERSION=$(grep version galaxy.yml | awk '{ print $2 }')
     - name: display value
-      run: echo $(currentversion)
+      run: echo ${CVERSION}
     # - name: Set up Python ${{ matrix.python-version }}
     #   uses: actions/setup-python@v2
     #   with:
