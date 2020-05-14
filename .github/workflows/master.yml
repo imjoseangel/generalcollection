@@ -15,7 +15,6 @@ jobs:
       uses: actions/checkout@master
       with:
         fetch-depth: '0'
-
     # - name: display value
     #   run: echo ${CVERSION}
     #   env:
