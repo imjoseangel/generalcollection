@@ -5,6 +5,6 @@
 Install with:
 
 ```sh
-ansible-galaxy collection install -r requirements.yml
+ansible-galaxy collection install -r requirements.yml -f
 ```
 
