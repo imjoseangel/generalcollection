@@ -41,10 +41,10 @@ jobs:
       uses: anothrNick/github-tag-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        CUSTOM_TAG: v1.0.1
+        CUSTOM_TAG: v1.0.2
     - name: Upload to release
       uses: AButler/upload-release-assets@v2.0
       with:
         files: imjoseangel-general*.tar.gz
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        release-tag: "${{ steps.bumpVersion.outputs.tag }}"
+        release-tag: ${{ steps.bumpVersion.outputs.new_tag }}
