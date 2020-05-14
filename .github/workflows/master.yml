@@ -23,16 +23,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install ansible
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Remove old packages
-      run: rm -f imjoseangel-general*.tar.gz
+    # - name: Remove old packages
+    #   run: rm -f imjoseangel-general*.tar.gz
     - name: Create ansible collection package
       run: ansible-galaxy collection build
-    - name: Commit files
-      run: |
-        git config --local user.email "josea.munoz@gmail.com"
-        git config --local user.name "imjoseangel"
-        git add .
-        git commit -m "Adds new release"
+    # - name: Commit files
+    #   run: |
+    #     git config --local user.email "josea.munoz@gmail.com"
+    #     git config --local user.name "imjoseangel"
+    #     git add .
+    #     git commit -m "Adds new release"
     # - name: Push changes
     #   uses: ad-m/github-push-action@master
     #   with:
