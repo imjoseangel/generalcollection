@@ -38,6 +38,7 @@ jobs:
     #   with:
     #     github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Bump version and push tag
+      id: bumpVersion
       uses: anothrNick/github-tag-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -47,4 +48,4 @@ jobs:
       with:
         files: imjoseangel-general*.tar.gz
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        release-tag: ${{ steps.bumpVersion.outputs.tag }}
+        release-tag: ${{ steps.bumpVersion.outputs.new_tag }}
