@@ -20,7 +20,7 @@ jobs:
       run: |
         grep version galaxy.yml
     - name: display value
-      run: echo ${{ steps.getversion.outputs.version }}
+      run: echo ${{ steps.getversion.outputs }}
     # - name: Set up Python ${{ matrix.python-version }}
     #   uses: actions/setup-python@v2
     #   with:
