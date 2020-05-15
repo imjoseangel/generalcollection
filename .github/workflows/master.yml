@@ -1,8 +1,9 @@
-name: MasterBuildCollection
+name: ReleaseBuildCollection
 on:
   push:
     branches:
-      - master
+      - 'releases/**'
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,8 +12,8 @@ jobs:
         python-version: [3.8]
 
     steps:
-    - name: Checkout master
-      uses: actions/checkout@master
+    - name: Checkout release branch
+      uses: actions/checkout@v2
       with:
         fetch-depth: '0'
 
@@ -44,7 +45,7 @@ jobs:
         release_name: Release v${{steps.cversion.outputs.version}}
         body: |
           # Ansible Collection: imjoseangel.general
-          ![MasterBuildCollection](https://github.com/imjoseangel/generalcollection/workflows/MasterBuildCollection/badge.svg)
+          ![ReleaseBuildCollection](https://github.com/imjoseangel/generalcollection/workflows/ReleaseBuildCollection/badge.svg)
 
           Install with:
           ```sh
